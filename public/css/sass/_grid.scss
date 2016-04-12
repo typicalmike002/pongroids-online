@@ -1,0 +1,110 @@
+/*! grid.scss | MIT License | Adds a responsive grid using flex for browers that support it. */
+
+
+
+/* Grid Elements
+   ========================================================================== */
+
+.grid_row {
+	display: flex;
+}
+
+.grid_column {
+	flex: 0 0 $hundred;
+}
+
+/* Grid Modifiers
+   ========================================================================== */
+
+/**
+ * Fixed width column modifiers (all display at 100% for mobile).
+*/
+
+.grid_column--half,
+.grid_column--thrid,
+.grid_column--forth {
+	flex: 0 0 $hundred;
+}
+
+/**
+ * Adds gutters to an entire row.
+*/
+
+.grid_row--gutters {
+	margin: -1em 0 0 -1em;
+}
+
+.grid_row--gutters > .grid_column {
+	padding: 1em 0 0 1em;
+}
+
+/**
+ * Adds alignment options to a row.
+*/
+
+.grid_row--top {
+	align-items: flex-start;
+}
+
+.grid_row--center {
+	align-items: center;
+}
+
+.grid_row--bottom {
+	align-items: flex-end;
+}
+
+/**
+ * Adds alignment options to a column.
+*/
+
+.grid_column--top {
+	align-self: flex-start;
+}
+
+.grid_column--center {
+	align-self: center;
+}
+
+.grid_column--bottom {
+	align-self: flex-end;
+}
+
+/* Responsive Elements and Modifiers
+   ========================================================================== */
+
+@media only screen and (min-width: $tabletScreen){
+
+	/**
+ 	 * Allows column widths to float next to eachother.
+	*/
+
+	.grid_column {
+		flex: 1;
+	}
+
+	/**
+ 	 * Sets the width for fixed column modifiers.
+	*/
+
+	.grid_column--half {
+		flex: 0 0 $hundred/2;
+	}
+
+	.grid_column--thrid {
+		flex: 0 0 $hundred/3;
+	}
+
+	.grid_column--forth {
+		flex: 0 0 $hundred/4;
+	}
+}
+
+@media only screen and (min-width: $tabletScreen){
+	.grid_column {
+		background: blue;
+	}
+}
+
+
+

@@ -1,0 +1,24 @@
+/*! enhanced.scss v1.0.0 | MIT License | Add border-box to browsers that support it. */
+
+/* Document Level
+   ========================================================================== */
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/* Embedded content
+   ========================================================================== */
+svg:not(:root) {
+	overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+pre {
+	overflow: auto;
+}

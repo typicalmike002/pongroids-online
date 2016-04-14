@@ -1,2 +1,8 @@
 # pongroids-online
-An online 2 player game that combines the 2 classic arcade games Astroids and Pong.  
+###### v0.0.1
+An online 2 player game that combines 2 classic arcade games (Astroids and Pong) into a single game with it's own rules, graphics, and ideas. This version is currently in the earliest stages of development as I develop and test out both dependencies and developer dependencies that will be useful in future versions.  None of the actual game components are going to be implementend until v0.1.0.
+
+### About this repo
+The idea for this game came from a school project I programmed in processing and created custom controllers using a single Arduino.  It ran off of a single desktop computer and had 2 controllers that required both players to be in the same room.  Since graduating, I wanted to create the same idea but reach a larger audience.  I've decided to reprogram the entire game using JavaScript, so players can connect and play against eachother through the internet.  This repo and the project itself are in the earliest stages of development and won't contain any actual game elements until I'm sure about what frameworks and libraries I'd like to move forward with.  Since most of the game's idea already has graphics and its own physics already programmed in another language, my focus will be on its dependencies.  Moving these over shouldn't be as difficult as implementing a real time server in nodejs and socket.io which is all sort of new territory for me.  
+
+I'm not currently looking for any collaboration until more of the project is built however I'm totally open to any library or framework suggestions.  Right now, I'm very interested in the phaser.io framework.

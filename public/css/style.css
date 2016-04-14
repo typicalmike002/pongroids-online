@@ -1,57 +1,40 @@
 /*! style.scss | MIT License | imports all .scss files into a single scss file. */
-
 /* Viewpoint widths */
-
 @-webkit-viewport {
-  width: device-width;
-}
+  width: device-width; }
 
 @-moz-viewport {
-  width: device-width;
-}
+  width: device-width; }
 
 @-ms-viewport {
-  width: device-width;
-}
+  width: device-width; }
 
 @viewport {
-  width: device-width;
-}
+  width: device-width; }
 
 /* Globals */
-
 /* Global
    ========================================================================== */
-
 /* Media Queries
    ========================================================================== */
-
 /* Fonts
    ========================================================================== */
-
 html {
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }
 
 /* Basic Styles */
-
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document Level
    ========================================================================== */
-
 html {
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
+  -webkit-text-size-adjust: 100%; }
 
 body {
-  margin: 0;
-}
+  margin: 0; }
 
 /* HTML5 
    ========================================================================== */
-
 article,
 aside,
 details,
@@ -64,197 +47,155 @@ menu,
 nav,
 section,
 summary {
-  display: block;
-}
+  display: block; }
 
 /**
  * Add the correct display in IE 9-.
  */
-
 audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-}
+  display: inline-block; }
 
 /**
  * Add the correct display in iOS 4-7.
  */
-
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-
 progress {
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /**
  * Add the correct display in IE 10-.
  * 1. Add the correct display in IE.
  */
-
 template,
 [hidden] {
-  display: none;
-}
+  display: none; }
 
 /* Links
    ========================================================================== */
-
 /**
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-
 a {
   background-color: transparent;
   /* 1 */
   -webkit-text-decoration-skip: objects;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the outline on focused links when they are also active or hovered
  * in all browsers (opinionated).
  */
-
 a:active,
 a:hover {
-  outline-width: 0;
-}
+  outline-width: 0; }
 
 /* Navigation
    ========================================================================== */
-
 nav ul {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 /* Text-level semantics
    ========================================================================== */
-
 /**
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-
 abbr[title] {
   border-bottom: none;
   /* 1 */
   text-decoration: underline;
   /* 2 */
   text-decoration: underline dotted;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-
 b,
 strong {
-  font-weight: inherit;
-}
+  font-weight: inherit; }
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-
 b,
 strong {
-  font-weight: bolder;
-}
+  font-weight: bolder; }
 
 /**
  * Add the correct font style in Android 4.3-.
  */
-
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
-}
+  margin: 0.67em 0; }
 
 /**
  * Add the correct background and color in IE 9-.
  */
-
 mark {
   background-color: #ff0;
-  color: #000;
-}
+  color: #000; }
 
 /**
  * Add the correct font size in all browsers.
  */
-
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-
 sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 sub {
-  bottom: -0.25em;
-}
+  bottom: -0.25em; }
 
 sup {
-  top: -0.5em;
-}
+  top: -0.5em; }
 
 /* Embedded content
    ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10-.
  */
-
 img {
-  border-style: none;
-}
+  border-style: none; }
 
 /**
  * Hide the overflow in IE.
  */
-
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* Grouping content
    ========================================================================== */
-
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-
 code,
 kbd,
 pre,
@@ -262,39 +203,32 @@ samp {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Add the correct margin in IE 8.
  */
-
 figure {
-  margin: 1em 40px;
-}
+  margin: 1em 40px; }
 
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-
 hr {
   box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */
-}
+  /* 2 */ }
 
 /* Forms
    ========================================================================== */
-
 /**
  * 1. Change font properties to `inherit` in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-
 button,
 input,
 select,
@@ -302,85 +236,70 @@ textarea {
   font: inherit;
   /* 1 */
   margin: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Restore the font weight unset by the previous rule.
  */
-
 optgroup {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-
 button,
 input {
   /* 1 */
-  overflow: visible;
-}
+  overflow: visible; }
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-
 button,
 select {
   /* 1 */
-  text-transform: none;
-}
+  text-transform: none; }
 
 /**
  * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-
 button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
-
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
-  padding: 0;
-}
+  padding: 0; }
 
 /**
  * Restore the focus styles unset by the previous rule.
  */
-
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
+  outline: 1px dotted ButtonText; }
 
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
  */
-
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
+  padding: 0.35em 0.625em 0.75em; }
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -388,7 +307,6 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -401,242 +319,175 @@ legend {
   padding: 0;
   /* 3 */
   white-space: normal;
-  /* 1 */
-}
+  /* 1 */ }
 
 /**
  * Remove the default vertical scrollbar in IE.
  */
-
 textarea {
-  overflow: auto;
-}
+  overflow: auto; }
 
 /**
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+  height: auto; }
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
-
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  -webkit-appearance: none; }
 
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
-
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: 0.54;
-}
+  opacity: 0.54; }
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
-  /* 2 */
-}
+  /* 2 */ }
 
 /*! grid.scss | MIT License | Adds a responsive grid using flex for browers that support it. */
-
 /* Grid Elements
    ========================================================================== */
-
 .grid_row {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-}
+  display: flex; }
 
 .grid_column {
   -webkit-flex: 0 0 100%;
       -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-}
+          flex: 0 0 100%; }
 
 /* Grid Modifiers
    ========================================================================== */
-
 /**
  * Fixed width column modifiers (all display at 100% for mobile).
 */
-
 .grid_column--half,
 .grid_column--thrid,
 .grid_column--forth {
   -webkit-flex: 0 0 100%;
       -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-}
+          flex: 0 0 100%; }
 
 /**
  * Adds gutters to an entire row.
 */
-
 .grid_row--gutters {
-  margin: -1em 0 0 -1em;
-}
+  margin: -1em 0 0 -1em; }
 
 .grid_row--gutters > .grid_column {
-  padding: 1em 0 0 1em;
-}
+  padding: 1em 0 0 1em; }
 
 /**
  * Adds alignment options to a row.
 */
-
 .grid_row--top {
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
               -ms-grid-row-align: flex-start;
-          align-items: flex-start;
-}
+          align-items: flex-start; }
 
 .grid_row--center {
   -webkit-align-items: center;
       -ms-flex-align: center;
               -ms-grid-row-align: center;
-          align-items: center;
-}
+          align-items: center; }
 
 .grid_row--bottom {
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
               -ms-grid-row-align: flex-end;
-          align-items: flex-end;
-}
+          align-items: flex-end; }
 
 /**
  * Adds alignment options to a column.
 */
-
 .grid_column--top {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
-          align-self: flex-start;
-}
+          align-self: flex-start; }
 
 .grid_column--center {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
-          align-self: center;
-}
+          align-self: center; }
 
 .grid_column--bottom {
   -webkit-align-self: flex-end;
       -ms-flex-item-align: end;
-          align-self: flex-end;
-}
+          align-self: flex-end; }
 
 /* Responsive Elements and Modifiers
    ========================================================================== */
 
 /* Enhanced Styles */
 
-@media only screen and (min-width: 24em) {
-  /**
+@media only screen and (min-width: 24em) {/**
  	 * Allows column widths to float next to eachother.
 	*/
-
   .grid_column {
     -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-
-  /**
+    -ms-flex: 1;
+    flex: 1; }/**
  	 * Sets the width for fixed column modifiers.
 	*/
-
   .grid_column--half {
     -webkit-flex: 0 0 50%;
-        -ms-flex: 0 0 50%;
-            flex: 0 0 50%;
-  }
-
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%; }
   .grid_column--thrid {
     -webkit-flex: 0 0 33.33333%;
-        -ms-flex: 0 0 33.33333%;
-            flex: 0 0 33.33333%;
-  }
-
+    -ms-flex: 0 0 33.33333%;
+    flex: 0 0 33.33333%; }
   .grid_column--forth {
     -webkit-flex: 0 0 25%;
-        -ms-flex: 0 0 25%;
-            flex: 0 0 25%;
-  }
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%; } }
 
-  .grid_column {
-    background: blue;
-  }
-}
-
-@media all {
-  /*! enhanced.scss v1.0.0 | MIT License | Add border-box to browsers that support it. */
-
-  /* Document Level
+@media all {/*! enhanced.scss v1.0.0 | MIT License | Add border-box to browsers that support it. *//* Document Level
    ========================================================================== */
-
   html {
-    box-sizing: border-box;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
-  /* Embedded content
+    box-sizing: border-box; }
+  *, *:before, *:after {
+    box-sizing: inherit; }/* Embedded content
    ========================================================================== */
-
   svg:not(:root) {
-    overflow: hidden;
-  }
-
-  /* Grouping content
+    overflow: hidden; }/* Grouping content
    ========================================================================== */
-
   pre {
-    overflow: auto;
-  }
-}
+    overflow: auto; } }

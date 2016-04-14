@@ -1,7 +1,10 @@
 var webpack 			= require('webpack'),
+	fs 					= require('fs'),
 	path 				= require('path'),
 	ExtractTextPlugin   = require('extract-text-webpack-plugin'),
 	autoprefixer		= require('autoprefixer'),
+	mqpacker			= require('css-mqpacker'),
+	cssnano				= require('cssnano'),
 	environment 		= process.env.NODE_ENV || 'development';
 
 module.exports = {
@@ -9,7 +12,7 @@ module.exports = {
 	entry: './public/js/modules/main.js',
 	output: {
 		path: path.join(__dirname, 'public/js/'),
-		filename: environment === 'production' ? 
+		filename: environment === 'minify' ? 
 			'bundle.min.js' : 'bundle.js'
 	},
 	module: {
@@ -23,19 +26,26 @@ module.exports = {
 				test: /\.scss$/, 
 				loader: ExtractTextPlugin.extract(
 					'style',
-					'css?sourceMap!postcss-loader!group-css-media-queries!sass?sourceMap'
+					'css?sourceMap!postcss-loader!sass?sourceMap'
 				)
 			}
 		]
 	},
 
-	postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],	
+	postcss: environment === 'minify' ? [
+		autoprefixer({ browsers: ['last 2 versions'] }),
+		mqpacker(),
+		cssnano({ discardComments: { removeAll: true }})
+	] : [
+		autoprefixer({ browsers: ['last 2 versions'] }),
+		mqpacker()
+	],
 
-	plugins: environment === 'production' ? [
+	plugins: environment === 'minify' ? [
 		new webpack.optimize.UglifyJsPlugin({
 			compress: { warnings: true }
 		}),
-		new ExtractTextPlugin("../css/style.css")
+		new ExtractTextPlugin("../css/style.min.css")
 	] : [
 		new ExtractTextPlugin("../css/style.css")
 	]

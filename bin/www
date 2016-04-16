@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../pongroids-online');
+var app = require('../server.js');
 var debug = require('debug')('pongroids-online:server');
 var http = require('http');
 
@@ -20,6 +20,13 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+
+/**
+ * Socket.io
+ */
+
+var io = app.io;
+io.attach(server);
 
 /**
  * Listen on provided port, on all network interfaces.

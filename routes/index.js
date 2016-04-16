@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+module.exports = function(io){
+	var express = require('express');
+	var router = express.Router();
 
-// Basic Example:
-router.get('/', function(req, res) {
-	res.render('index');
-});
+	// Basic Example:
+	router.get('/', function(req, res) {
+		res.render('index');
+	});
 
-module.exports = router;
+	io.on('connection', function(socket) {
+		
+		socket.on('message', function(data) {
+			socket.emit('news', { hello: 'world' });
+		});
+	});
+	
+	return router;
+}

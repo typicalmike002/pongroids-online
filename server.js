@@ -1,9 +1,7 @@
 // Application Dependencies:
-var express = require('express');
-var path = require('path');
-
-// Application Routes:
-var routes = require('./routes/index');
+var express		= require('express'),
+	path 		= require('path'),
+	socket_io	= require('socket.io');
 
 // Application framework:
 var app = express();
@@ -13,7 +11,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/html'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Loads routes:
+// Socket.io
+var io = socket_io();
+app.io = io;
+
+// Application Routes:
+var routes = require('./routes/index')(io);
 app.use('/', routes);
 
 // Launches Application:

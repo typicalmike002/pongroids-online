@@ -43,7 +43,7 @@ module.exports = {
 
 	plugins: environment === 'minify' ? [
 		new webpack.optimize.UglifyJsPlugin({
-			compress: { warnings: true }
+			compress: { warnings: false }
 		}),
 		new ExtractTextPlugin("../css/style.min.css")
 	] : [

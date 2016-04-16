@@ -11,7 +11,7 @@ module.exports = {
 	debug: true,
 	entry: './public/js/modules/main.js',
 	output: {
-		path: path.join(__dirname, 'public/js/'),
+		path: path.join(__dirname, '/js/'),
 		filename: environment === 'minify' ? 
 			'bundle.min.js' : 'bundle.js'
 	},
@@ -20,7 +20,7 @@ module.exports = {
 			{ 
 				test: /\.js$/, 
 				loader: 'babel', 
-				include: __dirname + '/public/js/modules/' 
+				include: __dirname + '/js/modules/' 
 			},
 			{ 
 				test: /\.scss$/, 

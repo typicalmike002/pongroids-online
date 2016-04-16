@@ -8,8 +8,8 @@
     "watch": "npm run watch-js & npm run watch-sass",
     "watch-js": "nodemon -e js -w public/js/modules -x 'npm run build'",
     "watch-sass": "nodemon -e scss -w public/css/sass -x 'npm run build'",
-    "build": "webpack --config webpack.config.js & npm run minify",
-    "minify": "export NODE_ENV=minify|| set NODE_ENV=minify|| NODE_ENV=minify&& webpack --config webpack.config.js"
+    "build": "webpack --config public/webpack.config.js & npm run minify",
+    "minify": "export NODE_ENV=minify|| set NODE_ENV=minify|| NODE_ENV=minify&& webpack --config public/webpack.config.js"
   },
   "repository": {
     "type": "git",

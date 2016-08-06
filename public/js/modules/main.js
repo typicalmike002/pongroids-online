@@ -6,6 +6,6 @@ import styles from './../../css/sass/style.scss'
 /**
  * Test for socket.io connection.
  */
-import socket_test from './socket-test.js'
+import { socket_test } from './socket-test.js'
 
 socket_test();

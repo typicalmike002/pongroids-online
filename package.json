@@ -8,8 +8,9 @@
     "watch": "npm run watch-js & npm run watch-sass",
     "watch-js": "nodemon -e js -w public/js/modules -x 'npm run build'",
     "watch-sass": "nodemon -e scss -w public/css/sass -x 'npm run build'",
-    "build": "webpack --config public/webpack.config.js & npm run minify",
-    "minify": "export NODE_ENV=minify|| set NODE_ENV=minify|| NODE_ENV=minify&& webpack --config public/webpack.config.js"
+    "build": "webpack --config public/webpack.config.js && npm run minify",
+    "minify": "export NODE_ENV=minify|| set NODE_ENV=minify|| NODE_ENV=minify && webpack --config public/webpack.config.js && npm run tests",
+    "tests": "karma start spec/karma.config.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "babel-cli": "6.11.4",
     "ejs": "2.4.1",
     "express": "4.13.4",
+    "karma-phantomjs-shim": "1.4.0",
     "path": "0.12.7",
     "socket.io": "1.4.5"
   },
@@ -43,10 +45,14 @@
     "debug": "2.2.0",
     "extract-text-webpack-plugin": "1.0.1",
     "jasmine": "2.4.1",
+    "jspm": "0.16.42",
     "karma": "1.1.2",
+    "karma-babel-preprocessor": "6.0.1",
     "karma-coverage": "1.1.1",
     "karma-jasmine": "1.0.2",
     "karma-phantomjs-launcher": "1.0.1",
+    "karma-phantomjs-shim": "1.4.0",
+    "karma-webpack": "1.7.0",
     "node-sass": "3.4.2",
     "nodemon": "1.9.1",
     "phantomjs-prebuilt": "2.1.10",

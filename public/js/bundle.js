@@ -52,8 +52,6 @@
 
 	var _socketTest = __webpack_require__(5);
 
-	var _socketTest2 = _interopRequireDefault(_socketTest);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
@@ -61,7 +59,7 @@
 	 */
 
 
-	(0, _socketTest2.default)();
+	(0, _socketTest.socket_test)();
 
 	/**
 	 * Test for socket.io connection.
@@ -83,8 +81,9 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
+	exports.socket_test = undefined;
 
 	var _scriptjs = __webpack_require__(6);
 
@@ -94,150 +93,154 @@
 
 	var socket_test = function socket_test() {
 
-		(0, _scriptjs2.default)("https://cdn.socket.io/socket.io-1.4.5.js", function () {
+	    (0, _scriptjs2.default)("https://cdn.socket.io/socket.io-1.4.5.js", function () {
 
-			var socket = io.connect('http://localhost:3000');
+	        var socket = io.connect('http://localhost:3000');
 
-			socket.on('connect', function () {
-				socket.emit('message', 'Hello server');
-			});
+	        socket.on('connect', function () {
+	            socket.emit('message', 'Hello server');
+	        });
 
-			socket.on('news', function (msg) {
-				console.log('News from the server: ' + msg.hello);
-			});
-		});
+	        socket.on('news', function (msg) {
+	            console.log('News from the server: ' + msg.hello);
+	        });
+	    });
 	};
 
-	exports.default = socket_test;
+	exports.socket_test = socket_test;
 
 /***/ },
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
+
+	/*!
 	  * $script.js JS loader & dependency manager
 	  * https://github.com/ded/script.js
 	  * (c) Dustin Diaz 2014 | License MIT
 	  */
 
 	(function (name, definition) {
-	  if (typeof module != 'undefined' && module.exports) module.exports = definition()
-	  else if (true) !(__WEBPACK_AMD_DEFINE_FACTORY__ = (definition), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
-	  else this[name] = definition()
+	  if (typeof module != 'undefined' && module.exports) module.exports = definition();else if (true) !(__WEBPACK_AMD_DEFINE_FACTORY__ = (definition), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else this[name] = definition();
 	})('$script', function () {
-	  var doc = document
-	    , head = doc.getElementsByTagName('head')[0]
-	    , s = 'string'
-	    , f = false
-	    , push = 'push'
-	    , readyState = 'readyState'
-	    , onreadystatechange = 'onreadystatechange'
-	    , list = {}
-	    , ids = {}
-	    , delay = {}
-	    , scripts = {}
-	    , scriptpath
-	    , urlArgs
+	  var doc = document,
+	      head = doc.getElementsByTagName('head')[0],
+	      s = 'string',
+	      f = false,
+	      push = 'push',
+	      readyState = 'readyState',
+	      onreadystatechange = 'onreadystatechange',
+	      list = {},
+	      ids = {},
+	      delay = {},
+	      scripts = {},
+	      scriptpath,
+	      urlArgs;
 
 	  function every(ar, fn) {
-	    for (var i = 0, j = ar.length; i < j; ++i) if (!fn(ar[i])) return f
-	    return 1
+	    for (var i = 0, j = ar.length; i < j; ++i) {
+	      if (!fn(ar[i])) return f;
+	    }return 1;
 	  }
 	  function each(ar, fn) {
 	    every(ar, function (el) {
-	      return !fn(el)
-	    })
+	      return !fn(el);
+	    });
 	  }
 
 	  function $script(paths, idOrDone, optDone) {
-	    paths = paths[push] ? paths : [paths]
-	    var idOrDoneIsDone = idOrDone && idOrDone.call
-	      , done = idOrDoneIsDone ? idOrDone : optDone
-	      , id = idOrDoneIsDone ? paths.join('') : idOrDone
-	      , queue = paths.length
+	    paths = paths[push] ? paths : [paths];
+	    var idOrDoneIsDone = idOrDone && idOrDone.call,
+	        done = idOrDoneIsDone ? idOrDone : optDone,
+	        id = idOrDoneIsDone ? paths.join('') : idOrDone,
+	        queue = paths.length;
 	    function loopFn(item) {
-	      return item.call ? item() : list[item]
+	      return item.call ? item() : list[item];
 	    }
 	    function callback() {
-	      if (!--queue) {
-	        list[id] = 1
-	        done && done()
+	      if (! --queue) {
+	        list[id] = 1;
+	        done && done();
 	        for (var dset in delay) {
-	          every(dset.split('|'), loopFn) && !each(delay[dset], loopFn) && (delay[dset] = [])
+	          every(dset.split('|'), loopFn) && !each(delay[dset], loopFn) && (delay[dset] = []);
 	        }
 	      }
 	    }
 	    setTimeout(function () {
 	      each(paths, function loading(path, force) {
-	        if (path === null) return callback()
-	        
+	        if (path === null) return callback();
+
 	        if (!force && !/^https?:\/\//.test(path) && scriptpath) {
-	          path = (path.indexOf('.js') === -1) ? scriptpath + path + '.js' : scriptpath + path;
-	        }
-	        
-	        if (scripts[path]) {
-	          if (id) ids[id] = 1
-	          return (scripts[path] == 2) ? callback() : setTimeout(function () { loading(path, true) }, 0)
+	          path = path.indexOf('.js') === -1 ? scriptpath + path + '.js' : scriptpath + path;
 	        }
 
-	        scripts[path] = 1
-	        if (id) ids[id] = 1
-	        create(path, callback)
-	      })
-	    }, 0)
-	    return $script
+	        if (scripts[path]) {
+	          if (id) ids[id] = 1;
+	          return scripts[path] == 2 ? callback() : setTimeout(function () {
+	            loading(path, true);
+	          }, 0);
+	        }
+
+	        scripts[path] = 1;
+	        if (id) ids[id] = 1;
+	        create(path, callback);
+	      });
+	    }, 0);
+	    return $script;
 	  }
 
 	  function create(path, fn) {
-	    var el = doc.createElement('script'), loaded
+	    var el = doc.createElement('script'),
+	        loaded;
 	    el.onload = el.onerror = el[onreadystatechange] = function () {
-	      if ((el[readyState] && !(/^c|loade/.test(el[readyState]))) || loaded) return;
-	      el.onload = el[onreadystatechange] = null
-	      loaded = 1
-	      scripts[path] = 2
-	      fn()
-	    }
-	    el.async = 1
+	      if (el[readyState] && !/^c|loade/.test(el[readyState]) || loaded) return;
+	      el.onload = el[onreadystatechange] = null;
+	      loaded = 1;
+	      scripts[path] = 2;
+	      fn();
+	    };
+	    el.async = 1;
 	    el.src = urlArgs ? path + (path.indexOf('?') === -1 ? '?' : '&') + urlArgs : path;
-	    head.insertBefore(el, head.lastChild)
+	    head.insertBefore(el, head.lastChild);
 	  }
 
-	  $script.get = create
+	  $script.get = create;
 
 	  $script.order = function (scripts, id, done) {
 	    (function callback(s) {
-	      s = scripts.shift()
-	      !scripts.length ? $script(s, id, done) : $script(s, callback)
-	    }())
-	  }
+	      s = scripts.shift();
+	      !scripts.length ? $script(s, id, done) : $script(s, callback);
+	    })();
+	  };
 
 	  $script.path = function (p) {
-	    scriptpath = p
-	  }
+	    scriptpath = p;
+	  };
 	  $script.urlArgs = function (str) {
 	    urlArgs = str;
-	  }
+	  };
 	  $script.ready = function (deps, ready, req) {
-	    deps = deps[push] ? deps : [deps]
+	    deps = deps[push] ? deps : [deps];
 	    var missing = [];
 	    !each(deps, function (dep) {
 	      list[dep] || missing[push](dep);
-	    }) && every(deps, function (dep) {return list[dep]}) ?
-	      ready() : !function (key) {
-	      delay[key] = delay[key] || []
-	      delay[key][push](ready)
-	      req && req(missing)
-	    }(deps.join('|'))
-	    return $script
-	  }
+	    }) && every(deps, function (dep) {
+	      return list[dep];
+	    }) ? ready() : !function (key) {
+	      delay[key] = delay[key] || [];
+	      delay[key][push](ready);
+	      req && req(missing);
+	    }(deps.join('|'));
+	    return $script;
+	  };
 
 	  $script.done = function (idOrDone) {
-	    $script([null], idOrDone)
-	  }
+	    $script([null], idOrDone);
+	  };
 
-	  return $script
+	  return $script;
 	});
-
 
 /***/ }
 /******/ ]);

@@ -24,6 +24,9 @@ html {
 
 /* Basic Styles */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+.body {
+  background-color: blue; }
+
 /* Document Level
    ========================================================================== */
 html {
